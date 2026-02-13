@@ -1,0 +1,256 @@
+body{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+    padding: 1.5em 0 0.5em 0;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.25em 1.25em 1.25em;
+}
+
+form{
+    display: flex;
+    gap: 0.75em;
+    align-items: center;
+    padding: 1.25em;
+    border-radius: 8px;
+    max-width: 100%; 
+    flex-wrap: nowrap;
+}
+
+#favcolor{
+    width: 100px;
+    height: 70px;
+    border: 3px solid #D1D5DB;
+    cursor: pointer;
+    border-radius: 8px;
+    flex-shrink: 0; 
+}
+
+#color-scheme-mode{
+    width: 400px;
+    max-width: 100%;
+    height: 70px;
+    padding: 0 16px;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    border: 2px solid #D1D5DB;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    background-color: white;
+}
+
+#submit{
+    height: 70px;
+    font-size: 1rem;
+    padding: 0 24px;
+    background-color: white;
+    border: 2px solid #374151;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0; 
+}
+
+#submit:hover{
+    background-color: #038C8C;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+main{
+    flex: 1;
+    display: flex;
+    border-radius: 0;
+    overflow: hidden;
+    margin: 0 1.25em 1.25em 1.25em;
+    min-height: 400px;
+}
+
+.container{
+    flex: 1;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.color-column{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.color-column:hover{
+    transform: scale(1.02);
+}
+
+.color-column:active{
+    transform: scale(0.98);
+}
+
+.color-box{
+    flex: 1;
+    width: 100%;
+}
+
+.hex-text{
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: white;
+    border-top: 1px solid #E5E7EB;
+}
+
+.hex-text:hover{
+    background-color: #F9FAFB;
+}
+
+.tooltip{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 1000;
+    animation: fadeInout 1.5s ease;
+}
+
+@keyframes fadeInOut{
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+/* Tablet */
+@media(max-width: 900px){
+    #color-scheme-mode{
+        width: 300px;
+    }
+    
+    form{
+        gap: 0.5em;
+        padding: 1em;
+    }
+    
+    #favcolor{
+        width: 80px;
+        height: 60px;
+    }
+    
+    #color-scheme-mode{
+        height: 60px;
+        font-size: 1rem;
+    }
+    
+    #submit{
+        height: 60px;
+        padding: 0 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small tablet */
+@media(max-width: 768px){
+    form{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #color-scheme-mode{
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .hex-text{
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}
+
+/* Mobile */
+@media(max-width: 480px){
+    h1{
+        font-size: 1.5rem;
+        padding: 1em 0 0.5em 0;
+    }
+    
+    header{
+        padding: 0 0.8em 0.8em 0.8em;
+    }
+    
+    form{
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding: 1rem;
+    }
+    
+    #favcolor{
+        width: 100%;
+        height: 50px;
+    }
+
+    #color-scheme-mode{
+        width: 100%;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    #submit{
+        width: 100%;
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    main{
+        margin: 0 0.8em 0.8em 0.8em;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .color-column{
+        min-height: 80px;
+    }
+
+    .hex-text{
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
