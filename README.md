@@ -2,7 +2,7 @@
 
 A simple and elegant color scheme generator that helps you create beautiful color palettes using The Color API.
 
-Live Demo:
+Live Demo: https://colorschemegeneratorcary.netlify.app/
 
 ## Features
 
